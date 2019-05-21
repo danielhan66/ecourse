@@ -4,6 +4,8 @@
 "eCourseDBConnection": "Server=localhost;Database=eCourse;Integrated Security=true"
 2. To install all packages, please Run
 npm i rimraf -g
+
+
 npm i
 
 

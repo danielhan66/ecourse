@@ -2,9 +2,9 @@
 
 1. Please modify the database connection string in appsettings.json to point to an empty database
 "eCourseDBConnection": "Server=localhost;Database=eCourse;Integrated Security=true"
-2. To install all packages, please Run
-npm i rimraf -g
-npm i
+2. To install all packages, please run
+"npm i rimraf -g" 
+"npm i"
 
 3. The database tables will be automatically created by running the project in visual studio 2019 (community/professional/enterprise version) and the system will be started
 

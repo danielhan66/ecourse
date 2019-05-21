@@ -24,7 +24,7 @@ namespace eCourse.Services.Implementations
 
         public async Task<List<CourseDto>> GetCourses()
         {
-            return await _dbContext.Courses.Include(c => c.Author).Where(c => !c.Deleted).Select(c => new CourseDto { CourseId = c.Id, Title = c.Title, Description = c.Description, AuthorName = c.Author.Name, AuthorPic = c.Author.Pic}).ToListAsync();
+            return await _dbContext.Courses.Include(c => c.Author).Where(c => !c.Deleted).Select(c => new CourseDto { CourseId = c.Id, Title = c.Title, Description = c.Description, AuthorName = c.Author.Name, AuthorPic = (c.Author.Pic??"dummy.gif")}).ToListAsync();
         }
 
         public async Task<CourseDto> GetCourseById(int id)
@@ -94,7 +94,7 @@ namespace eCourse.Services.Implementations
 
         public async Task<List<CourseDto>> SearchCourses(string searchText)
         {
-            return await _dbContext.Courses.Include(c => c.Author).Where(c => !c.Deleted && (c.Title.Contains(searchText) || c.Description.Contains(searchText) || c.Author.Name.Contains(searchText))).Select(c => new CourseDto { CourseId = c.Id, Title = c.Title, Description = c.Description, AuthorName = c.Author.Name, AuthorPic = c.Author.Pic }).ToListAsync();
+            return await _dbContext.Courses.Include(c => c.Author).Where(c => !c.Deleted && (c.Title.Contains(searchText) || c.Description.Contains(searchText) || c.Author.Name.Contains(searchText))).Select(c => new CourseDto { CourseId = c.Id, Title = c.Title, Description = c.Description, AuthorName = c.Author.Name, AuthorPic = (c.Author.Pic??"dummy.gif") }).ToListAsync();
         }
     }
 }

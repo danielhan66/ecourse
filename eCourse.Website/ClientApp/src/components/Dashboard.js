@@ -63,7 +63,7 @@ function renderCoursesTable(props) {
             <td>{course.title}</td>
             <td>{course.description}</td>
             <td>{course.authorName}</td>
-            <td>{course.authorPic}</td>
+            <td><img src={course.authorPic} /></td>
             <td>
               <Link className='btn btn-default pull-left' to={`/manage_course/edit/${course.courseId}`}>Edit</Link>
               <Link className='btn btn-default pull-left' to={`/manage_course/delete/${course.courseId}`}>Delete</Link>
@@ -73,7 +73,7 @@ function renderCoursesTable(props) {
       </tbody>
       <tfoot>
         <tr>
-            <th><Link className='btn btn-secondary pull-left' to="/manage_course/add">Add</Link></th>
+            <th colSpan="6"><Link className='btn btn-secondary pull-left' to="/manage_course/add">Add</Link></th>
         </tr>
       </tfoot>
     </table>

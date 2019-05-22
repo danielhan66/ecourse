@@ -2,6 +2,7 @@ using eCourse.Data;
 using eCourse.Data.Model;
 using eCourse.Services.Implementations;
 using eCourse.Services.Interfaces;
+using eCourse.Website.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -54,6 +55,8 @@ namespace eCourse
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.ConfigureExceptionHandler();
 
             //app.UseHttpsRedirection();
             app.UseStaticFiles();
